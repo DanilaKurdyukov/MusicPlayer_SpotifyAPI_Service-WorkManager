@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/image_view_userPhoto"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="@dimen/main_margin"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:srcCompat="@mipmap/ic_profile_image_round"
+        app:shapeAppearanceOverlay="@style/ImageViewStyle"
+        app:strokeWidth="0dp"
+        app:strokeColor="@color/white"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_view_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/image_view_userPhoto"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="@dimen/main_margin"
+        android:text="Welcome,"
+        style="@style/TextViewStyle"
+        android:textColor="@color/grey"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_view_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/image_view_userPhoto"
+        app:layout_constraintTop_toBottomOf="@id/text_view_1"
+        android:layout_marginLeft="@dimen/main_margin"
+        android:text="User Name"
+        style="@style/TextViewStyle"
+        android:textStyle="bold"
+        android:textSize="18dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

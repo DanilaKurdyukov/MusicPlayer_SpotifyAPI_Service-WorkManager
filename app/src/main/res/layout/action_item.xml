@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/blue_elis"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/image_view_actionImage"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="@dimen/main_margin"
+            android:src="@drawable/baseline_history_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_view_actionName"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/main_margin"
+            android:text="History"
+            app:fontFamily="sans-serif-medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/image_view_actionImage"
+            app:layout_constraintLeft_toRightOf="@id/image_view_actionImage"
+            app:layout_constraintTop_toTopOf="@id/image_view_actionImage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

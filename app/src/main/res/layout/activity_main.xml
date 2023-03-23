@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mainAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="Your Music"
+        android:layout_alignParentTop="true"
+        app:titleTextColor="@color/black"
+        android:background="@color/white"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:defaultNavHost="false"
+        app:navGraph="@navigation/nav_graph"
+        android:layout_above="@id/mainNavigationView"
+        android:layout_below="@id/mainAppBar"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/mainNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        app:menu="@menu/nav_menu"
+        app:itemIconTint="@color/item_text_tint_color"
+        app:itemIconSize="30dp"
+        app:itemTextColor="@color/item_text_tint_color"
+        app:itemTextAppearanceActive="@style/BottomViewActiveTextStyle"
+        app:itemTextAppearanceInactive="@style/BottomViewInactiveTextStyle"
+        android:clipToPadding="false"/>
+
+
+
+</RelativeLayout>
