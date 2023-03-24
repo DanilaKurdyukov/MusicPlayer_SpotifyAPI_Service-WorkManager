@@ -21,6 +21,8 @@ class PlaylistAdapter(var playlists: List<PlaylistChild>, var context: Context) 
         val imagePrimary = itemView.findViewById<ImageView>(R.id.image_view_playListImagePrimary)
         val txtPlaylistPrimaryName = itemView.findViewById<MaterialTextView>(R.id.text_view_playlistNamePrimary)
         val divider = itemView.findViewById<View>(R.id.divider_view)
+        val txtPlaylistTypeOwner = itemView.findViewById<MaterialTextView>(R.id.text_view_playlistTypeOwner)
+        val txtTracksCount = itemView.findViewById<MaterialTextView>(R.id.text_view_tracksCount)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -34,6 +36,8 @@ class PlaylistAdapter(var playlists: List<PlaylistChild>, var context: Context) 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val current: PlaylistChild = playlists[position]
         holder.txtPlaylistPrimaryName.text = current.name
+        holder.txtPlaylistTypeOwner.text = "${current.type} | ${current.playlistOwner.name}"
+        holder.txtTracksCount.text = current.tracks.count.toString()
         Picasso.get().load(current.images[0].url).into(holder.imagePrimary)
         if(position==itemCount-1){
             holder.divider.visibility = View.GONE

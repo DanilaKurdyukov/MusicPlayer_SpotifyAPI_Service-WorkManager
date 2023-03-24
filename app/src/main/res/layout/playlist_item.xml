@@ -4,15 +4,16 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/image_view_playListImagePrimary"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@drawable/baseline_history_24"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_margin="@dimen/main_margin"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        app:srcCompat="@mipmap/ic_profile_image_round"
+        app:shapeAppearanceOverlay="@style/ImageViewStyle"/>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_view_playlistNamePrimary"
@@ -21,8 +22,29 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/image_view_playListImagePrimary"
-        android:layout_margin="@dimen/main_margin"
+        android:layout_marginLeft="@dimen/main_margin"
         android:text="heaven"
+        style="@style/TextViewStyle"
+        android:textStyle="bold"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_view_playlistTypeOwner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/text_view_playlistNamePrimary"
+        app:layout_constraintLeft_toRightOf="@id/image_view_playListImagePrimary"
+        android:text="Playlist | Spotify"
+        android:layout_marginLeft="@dimen/main_margin"
+        style="@style/TextViewStyle"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_view_tracksCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/text_view_playlistNamePrimary"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="101"
+        android:layout_marginRight="@dimen/main_margin"
         style="@style/TextViewStyle"/>
 
     <View

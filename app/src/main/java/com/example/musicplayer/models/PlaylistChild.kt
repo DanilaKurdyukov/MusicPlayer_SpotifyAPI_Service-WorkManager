@@ -1,4 +1,6 @@
 package com.example.musicplayer.models
 
-class PlaylistChild(var name: String, var images: List<Image>, var type: String, var tracks: PlaylistTrack) {
+import com.google.gson.annotations.SerializedName
+
+class PlaylistChild(var name: String, var images: List<Image>, var type: String, var tracks: PlaylistTrack,@SerializedName("owner") var playlistOwner: PlaylistOwner) {
 }

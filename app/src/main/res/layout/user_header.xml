@@ -12,9 +12,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:srcCompat="@mipmap/ic_profile_image_round"
-        app:shapeAppearanceOverlay="@style/ImageViewStyle"
-        app:strokeWidth="0dp"
-        app:strokeColor="@color/white"/>
+        app:shapeAppearanceOverlay="@style/ImageViewStyle"/>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_view_1"
