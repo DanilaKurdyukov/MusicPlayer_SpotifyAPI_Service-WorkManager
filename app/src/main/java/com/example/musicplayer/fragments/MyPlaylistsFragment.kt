@@ -4,9 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.musicplayer.R
 import com.example.musicplayer.adapters.PlaylistAdapter
@@ -52,7 +51,7 @@ class MyPlaylistsFragment : Fragment() {
 
     var api : IApi? = null
 
-    val token = "BQDqYFLtrh1PDEYSioLxArF_Xfj4cD6RMxRf1QKrz_TNFcIEUjX4IUeOK2zAjfJOwXnluQEgVqh8VW9yBCLBIDal1W_r8f0rG2avRAfvMSyXrKyeNFBR0iVY4kUmQYvxnYsL24prnibHEWqzp9iMdyeKZjJdlN0vFVjXI4UdRbAtgj0Kujc3V2mPcmyZZ72-49uzCzgfjiXCsime"
+    val token = "BQA9NQBK2LiP23qBcvZGhO1Yo-4MjzuUPLd1WKEvdHHHCjFCQX_yxOP4WZubD-C9lEvX4NQnF4wHwX68J8hq-xmkIa9XczKlFO4uvauxOQzfsrYDXAS5yabRrCGd1G0RmmFtHbs159hEq3yoFOdNpT9okQ9hlgcbvuN7C1nOg5rFQVt4RsUyHuieo0H2EDCjtd-T9ZSn5IirylDJ"
     val userId = "hqjjh9g46r5kgvvydj3dcan88"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -79,6 +78,9 @@ class MyPlaylistsFragment : Fragment() {
                     }
                 }
                 playlistAdapter = PlaylistAdapter(playlistsChild!!,requireContext())
+                playlistAdapter?.onItemClick = { playlist ->
+                    Toast.makeText(requireContext(),playlist.name,Toast.LENGTH_LONG).show()
+                }
                 playlistRecycler?.adapter = playlistAdapter!!
             }
 
