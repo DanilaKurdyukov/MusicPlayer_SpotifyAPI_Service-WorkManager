@@ -14,10 +14,19 @@
         android:id="@+id/myPlaylistsFragment"
         android:name="com.example.musicplayer.fragments.MyPlaylistsFragment"
         android:label="My playlists"
-        tools:layout="@layout/fragment_my_playlists" />
+        tools:layout="@layout/fragment_my_playlists" >
+        <action
+            android:id="@+id/action_myPlaylistsFragment_to_songsFragment"
+            app:destination="@id/songsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.musicplayer.fragments.SearchFragment"
         android:label="Search"
         tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/songsFragment"
+        android:name="com.example.musicplayer.fragments.SongsFragment"
+        android:label="Songs"
+        tools:layout="@layout/fragment_songs" />
 </navigation>
