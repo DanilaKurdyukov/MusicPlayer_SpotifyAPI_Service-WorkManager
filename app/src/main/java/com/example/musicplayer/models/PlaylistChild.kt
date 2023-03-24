@@ -1,4 +1,4 @@
 package com.example.musicplayer.models
 
-class PlaylistChild(var name: String, var images: List<Image>) {
+class PlaylistChild(var name: String, var images: List<Image>, var type: String) {
 }

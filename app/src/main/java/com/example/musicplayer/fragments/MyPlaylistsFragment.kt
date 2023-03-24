@@ -52,7 +52,7 @@ class MyPlaylistsFragment : Fragment() {
 
     var api : IApi? = null
 
-    val token = "BQCShKuvVN4_ViE130us4Lg2sFqIZBVp8j6J7XYfH-GOn5-UG9i27EwaGsOJfBXTl1nm99b7vtSycqv0dL4pv02VddzSeDLkoJwZr0Ih3msK94ItmcM6cXtqxK9yD-68AUmtfPTwPqmS2J89TytGxc70r3L9k5Yd_cKbfWpZ-eRaEPXhR4w6l2cAZGnDBUvjUAVRzivGmrXfdY8K"
+    val token = "BQDqYFLtrh1PDEYSioLxArF_Xfj4cD6RMxRf1QKrz_TNFcIEUjX4IUeOK2zAjfJOwXnluQEgVqh8VW9yBCLBIDal1W_r8f0rG2avRAfvMSyXrKyeNFBR0iVY4kUmQYvxnYsL24prnibHEWqzp9iMdyeKZjJdlN0vFVjXI4UdRbAtgj0Kujc3V2mPcmyZZ72-49uzCzgfjiXCsime"
     val userId = "hqjjh9g46r5kgvvydj3dcan88"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
