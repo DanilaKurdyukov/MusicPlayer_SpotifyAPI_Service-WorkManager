@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.searchFragment -> mainAppBar.navigationIcon = null
                 R.id.myPlaylistsFragment -> mainAppBar.navigationIcon = null
                 R.id.mainFragment -> mainAppBar.navigationIcon = null
+                else -> mainAppBar.navigationIcon = getDrawable(R.drawable.baseline_arrow_back_24)
             }
         }
 

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.musicplayer.R
 import com.example.musicplayer.adapters.SongAdapter.ViewHolder
@@ -22,7 +23,7 @@ class SongAdapter(var tracks: List<TrackChild>, var context: Context) :
         val songImage = itemView.findViewById<ShapeableImageView>(R.id.image_view_songImageSmall)
         val txtSongName = itemView.findViewById<MaterialTextView>(R.id.text_view_songNamePrimary)
         val txtSinger = itemView.findViewById<MaterialTextView>(R.id.text_view_singer)
-        val btnSettings = itemView.findViewById<ImageButton>(R.id.image_button_settingsSong)
+        val btnSettings = itemView.findViewById<ImageView>(R.id.image_button_settingsSong)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

@@ -38,14 +38,14 @@
         android:layout_marginLeft="@dimen/main_margin"
         style="@style/TextViewStyle"/>
 
-    <ImageButton
+    <ImageView
         android:id="@+id/image_button_settingsSong"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         app:layout_constraintBottom_toTopOf="@id/divider_view"
         android:src="@drawable/baseline_settings_24"
         app:layout_constraintRight_toRightOf="parent"
-        android:backgroundTintMode="screen"/>
+        android:layout_marginRight="@dimen/main_margin"/>
 
     <View
         android:id="@+id/divider_view"
