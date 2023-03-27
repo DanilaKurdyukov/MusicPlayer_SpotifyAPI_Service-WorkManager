@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.musicplayer.R
@@ -47,12 +49,13 @@ class SongsFragment : Fragment() {
     var songAdapter: SongAdapter? = null
     var songs: ArrayList<TrackChild> = ArrayList()
 
-    val token = "BQCZFSpddKBV2VG2KaZO86Onp_mkfgKx2gOhB5fQ5BXvORe40o8_nB1moXrjjKsjNv7Fwmm5VOvFiWemaL_zhLbIHQ_hC_fOdR9H4wUwLRfMV3hszl9g_XY4Z_nz8SN7BxkeUTOK4UNGQDX9iSDxL5jXA0DbylVCLaXEUz0uS8pG3cfP7gAzCErQfS-jzazibxyzBPm7ZTvlezqt"
+    val token = "BQCfXdNoKKJuB5HfBdyAc0xScz-r0zmbhVFERJEazN5RagmbNHMlRrq_x2_xr1V3VEIMVW0mWHgMxqBFW86oqVDVbFM9f72s6x9mC6zdGhGXoT5p9leIHwk2PyNM80P5FfjMNWOh2v4O75r-SJooOadyqbozLOfflg9ZXAJI22YPBKKQKzOv1RN0aubOiKJp71zA37y9dM8CA5eW"
 
     var api : IApi? = null
 
     var currentPlaylist: PlaylistChild? = null
 
+    var imageViewIsPlaylistCollaborative: ImageView? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -70,6 +73,12 @@ class SongsFragment : Fragment() {
         api = AppData.getClient()?.create(IApi::class.java)
         init(view)
         getPlaylists()
+
+        when(currentPlaylist?.isPlaylistCollaborative){
+            false -> imageViewIsPlaylistCollaborative?.setImageResource(R.drawable.baseline_lock_24)
+            true -> imageViewIsPlaylistCollaborative?.setImageResource(R.drawable.baseline_lock_open_24)
+            else -> imageViewIsPlaylistCollaborative?.setImageDrawable(null)
+        }
 
     }
 
@@ -97,6 +106,7 @@ class SongsFragment : Fragment() {
 
     private fun init(view: View) {
         songsRecycler = view.findViewById<RecyclerView>(R.id.recycler_view_songsByPlaylist)
+        imageViewIsPlaylistCollaborative = view.findViewById(R.id.image_view_isPlaylistCollaborative)
     }
 
     companion object {

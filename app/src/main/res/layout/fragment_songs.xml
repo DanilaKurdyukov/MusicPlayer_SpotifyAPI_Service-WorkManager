@@ -19,16 +19,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"/>
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/text_view_playlistDuration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/image_view_isPlaylistCollaborative"
-            android:text="1 ч. 47 мин."
-            style="@style/TextViewStyle"
-            android:layout_margin="@dimen/main_margin"/>
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_songsByPlaylist"
             android:layout_width="match_parent"

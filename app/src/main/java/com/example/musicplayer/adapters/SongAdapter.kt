@@ -38,6 +38,11 @@ class SongAdapter(var tracks: List<TrackChild>, var context: Context) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val current: TrackChild = tracks[position]
         holder.txtSongName.text = shortSongName(current.trackInfo.songName)
+        var artistsName = ""
+        for (artist in current.trackInfo.artists){
+            artistsName += "${artist.name}, "
+        }
+        holder.txtSinger.text = artistsName.substring(0,artistsName.length-2)
         Picasso.get().load(current.trackInfo.album.songImages[0].url).into(holder.songImage)
         if (position==tracks.size-1){
             holder.divider.visibility = View.GONE
@@ -49,6 +54,13 @@ class SongAdapter(var tracks: List<TrackChild>, var context: Context) :
             return "${longName.substring(0, 32)}...";
         }
         return longName
+    }
+
+    private fun songSinger(singers: ArrayList<String>){
+        var result = StringBuilder()
+        for(singer in singers){
+            result.append(singer)
+        }
     }
 
 }
