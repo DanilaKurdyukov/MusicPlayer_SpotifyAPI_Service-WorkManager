@@ -7,7 +7,7 @@
     tools:context=".fragments.SongsFragment">
 
     <ImageView
-        android:id="@+id/image_view_isPlaylistCollabrative"
+        android:id="@+id/image_view_isPlaylistCollaborative"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:src="@drawable/baseline_lock_24"
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/image_view_isPlaylistCollabrative"
+        app:layout_constraintLeft_toRightOf="@id/image_view_isPlaylistCollaborative"
         android:text="1 ч. 47 мин."
         style="@style/TextViewStyle"
         android:layout_margin="@dimen/main_margin"/>
@@ -31,6 +31,6 @@
         android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/image_view_isPlaylistCollabrative"/>
+        app:layout_constraintTop_toBottomOf="@id/image_view_isPlaylistCollaborative"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

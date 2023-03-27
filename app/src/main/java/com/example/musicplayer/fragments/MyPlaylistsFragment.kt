@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.musicplayer.R
 import com.example.musicplayer.adapters.PlaylistAdapter
@@ -51,7 +52,7 @@ class MyPlaylistsFragment : Fragment() {
 
     var api : IApi? = null
 
-    val token = "BQA9NQBK2LiP23qBcvZGhO1Yo-4MjzuUPLd1WKEvdHHHCjFCQX_yxOP4WZubD-C9lEvX4NQnF4wHwX68J8hq-xmkIa9XczKlFO4uvauxOQzfsrYDXAS5yabRrCGd1G0RmmFtHbs159hEq3yoFOdNpT9okQ9hlgcbvuN7C1nOg5rFQVt4RsUyHuieo0H2EDCjtd-T9ZSn5IirylDJ"
+    val token = "BQDabOOsGB4OcXkVAqkiBxXtrk1tqDyiKXHOPRG-A0qaQC0cJJO8eCBqMrEt3jdHNs4NPmdi3cjYg93DxC5fi766zP776LDEETankSFj-75lOyirkRUFOPwJ1IS8r1A8hFwj5Jmap1WrlOb25swztf8dwogVeIwxyg0MCEfemnQKwrz8D9BXgHyCn49Gjf_2Qqps2CtU0jt19Sxq"
     val userId = "hqjjh9g46r5kgvvydj3dcan88"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -79,7 +80,11 @@ class MyPlaylistsFragment : Fragment() {
                 }
                 playlistAdapter = PlaylistAdapter(playlistsChild!!,requireContext())
                 playlistAdapter?.onItemClick = { playlist ->
-                    Toast.makeText(requireContext(),playlist.name,Toast.LENGTH_LONG).show()
+                    var args: Bundle = Bundle()
+                    args.putParcelable("Playlist",playlist)
+                    val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.fragmentContainerView) as NavHostFragment?
+                    val navController = navHostFragment!!.navController
+                    navController.navigate(R.id.songsFragment,args)
                 }
                 playlistRecycler?.adapter = playlistAdapter!!
             }
