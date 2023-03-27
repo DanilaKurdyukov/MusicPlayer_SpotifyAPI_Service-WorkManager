@@ -42,13 +42,13 @@
         android:id="@+id/image_button_settingsSong"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        app:layout_constraintBottom_toTopOf="@id/divider_view"
+        app:layout_constraintBottom_toTopOf="@id/divider_view_song"
         android:src="@drawable/baseline_settings_24"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginRight="@dimen/main_margin"/>
 
     <View
-        android:id="@+id/divider_view"
+        android:id="@+id/divider_view_song"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/black"

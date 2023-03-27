@@ -1,7 +1,9 @@
 package com.example.musicplayer.fragments
 
+import android.graphics.Point
 import android.os.Build
 import android.os.Bundle
+import android.util.DisplayMetrics
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -45,7 +47,7 @@ class SongsFragment : Fragment() {
     var songAdapter: SongAdapter? = null
     var songs: ArrayList<TrackChild> = ArrayList()
 
-    val token = "BQDabOOsGB4OcXkVAqkiBxXtrk1tqDyiKXHOPRG-A0qaQC0cJJO8eCBqMrEt3jdHNs4NPmdi3cjYg93DxC5fi766zP776LDEETankSFj-75lOyirkRUFOPwJ1IS8r1A8hFwj5Jmap1WrlOb25swztf8dwogVeIwxyg0MCEfemnQKwrz8D9BXgHyCn49Gjf_2Qqps2CtU0jt19Sxq"
+    val token = "BQCZFSpddKBV2VG2KaZO86Onp_mkfgKx2gOhB5fQ5BXvORe40o8_nB1moXrjjKsjNv7Fwmm5VOvFiWemaL_zhLbIHQ_hC_fOdR9H4wUwLRfMV3hszl9g_XY4Z_nz8SN7BxkeUTOK4UNGQDX9iSDxL5jXA0DbylVCLaXEUz0uS8pG3cfP7gAzCErQfS-jzazibxyzBPm7ZTvlezqt"
 
     var api : IApi? = null
 
@@ -68,6 +70,7 @@ class SongsFragment : Fragment() {
         api = AppData.getClient()?.create(IApi::class.java)
         init(view)
         getPlaylists()
+
     }
 
     private fun getPlaylists(){
