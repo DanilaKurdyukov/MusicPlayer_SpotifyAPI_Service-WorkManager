@@ -1,5 +1,6 @@
 package com.example.musicplayer.fragments
 
+import android.content.Intent
 import android.graphics.Point
 import android.os.Build
 import android.os.Bundle
@@ -7,12 +8,15 @@ import android.util.DisplayMetrics
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
+import com.example.musicplayer.MusicService
 import com.example.musicplayer.R
 import com.example.musicplayer.adapters.PlaylistAdapter
 import com.example.musicplayer.adapters.SongAdapter
@@ -49,7 +53,7 @@ class SongsFragment : Fragment() {
     var songAdapter: SongAdapter? = null
     var songs: ArrayList<TrackChild> = ArrayList()
 
-    val token = "BQCfXdNoKKJuB5HfBdyAc0xScz-r0zmbhVFERJEazN5RagmbNHMlRrq_x2_xr1V3VEIMVW0mWHgMxqBFW86oqVDVbFM9f72s6x9mC6zdGhGXoT5p9leIHwk2PyNM80P5FfjMNWOh2v4O75r-SJooOadyqbozLOfflg9ZXAJI22YPBKKQKzOv1RN0aubOiKJp71zA37y9dM8CA5eW"
+    val token = "BQCK1iNVOJxuqQFb0CsozzZPwAqtD9fjv-ILrzhMghzSMA6d2oSIlocjuGy73IryT7DSmiXO5eDcB35UCXtxdRKMiV7F7JMA1RStKleA7gNCwnDZR-CdNGrJCdPwouEX9nDLll9a4STdajBTziN1JdQlNudGSizVAn_m8u05sEiT_4PBNjxSDgvHClHEXEsiBZSd4-edprnWXTZ8"
 
     var api : IApi? = null
 
@@ -107,6 +111,11 @@ class SongsFragment : Fragment() {
     private fun init(view: View) {
         songsRecycler = view.findViewById<RecyclerView>(R.id.recycler_view_songsByPlaylist)
         imageViewIsPlaylistCollaborative = view.findViewById(R.id.image_view_isPlaylistCollaborative)
+        val btnPlay = view.findViewById<Button>(R.id.button_play)
+        btnPlay.setOnClickListener(View.OnClickListener{
+            activity?.startService(Intent(context,MusicService::class.java))
+        })
+
     }
 
     companion object {

@@ -19,6 +19,13 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"/>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/image_view_isPlaylistCollaborative"
+            android:id="@+id/button_play"
+            android:text="play"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_songsByPlaylist"
             android:layout_width="match_parent"
